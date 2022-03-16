@@ -15,7 +15,10 @@ form {
   #buttons {
     grid-column: 1 / 4;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+
+    button {
+      width: 100px;
+      grid-column: 2 / 3;
+    }
   }
 }

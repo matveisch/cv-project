@@ -24,7 +24,6 @@ class Education extends Component {
                     <input type="date" id="dateToInput"/>
                     <div id={'buttons'}>
                         <button type="submit">Submit</button>
-                        <button>Edit</button>
                     </div>
                 </form>
             </div>

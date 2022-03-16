@@ -7,21 +7,22 @@ class General extends Component {
     }
 
     render() {
+        const {saveValue, changeButtonStatus} = this.props;
+
         return (
             <div>
                 <h2>General information</h2>
                 <form>
                     <label htmlFor="nameInput">Name</label>
-                    <input type="text" id="nameInput"/>
+                    <input name='name' onChange={saveValue} id="nameInput"/>
 
                     <label htmlFor="emailInput">Email</label>
-                    <input type="email" id="emailInput"/>
+                    <input name='email' onChange={saveValue} type="email" id="emailInput"/>
 
                     <label htmlFor="phoneInput">Phone</label>
-                    <input type="tel" id="phoneInput"/>
+                    <input name='phone' onChange={saveValue} type="tel" id="phoneInput"/>
                     <div id={'buttons'}>
-                        <button type="submit">Submit</button>
-                        <button>Edit</button>
+                        <button onClick={changeButtonStatus} type="submit">Submit</button>
                     </div>
                 </form>
             </div>

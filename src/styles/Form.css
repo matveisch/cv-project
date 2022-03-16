@@ -13,8 +13,10 @@ form input {
 form #buttons {
   grid-column: 1/4;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+}
+form #buttons button {
+  width: 100px;
+  grid-column: 2/3;
 }
 
 /*# sourceMappingURL=Form.css.map */
