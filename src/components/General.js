@@ -22,7 +22,7 @@ class General extends Component {
                     <label htmlFor="phoneInput">Phone</label>
                     <input name='phone' value={this.props.phone} onChange={saveValue} type="tel" id="phoneInput"/>
                     <div id={'buttons'}>
-                        <button onClick={changeButtonStatus} type="submit">Submit</button>
+                        <button name='generalSubmitBtn' onClick={changeButtonStatus} type="submit">Submit</button>
                     </div>
                 </form>
             </div>

@@ -7,23 +7,25 @@ class Education extends Component {
     }
 
     render() {
+        const {schoolName, studyTitle, schoolFrom, schoolTo, saveValue, changeButtonStatus} = this.props;
+
         return (
             <div>
                 <h2>Educational experience</h2>
                 <form>
                     <label htmlFor="schoolInput">School name</label>
-                    <input type="text" id="schoolInput"/>
+                    <input name='schoolName' value={schoolName} onChange={saveValue} type="text" id="schoolInput"/>
 
                     <label htmlFor="titleInput">Title of study</label>
-                    <input type="email" id="titleInput"/>
+                    <input name='studyTitle' value={studyTitle} onChange={saveValue} type="email" id="titleInput"/>
 
                     <label htmlFor="dateFromInput">From</label>
-                    <input type="date" id="dateFromInput"/>
+                    <input name='schoolFrom' value={schoolFrom} onChange={saveValue} type="date" id="dateFromInput"/>
 
                     <label htmlFor="dateToInput">To</label>
-                    <input type="date" id="dateToInput"/>
+                    <input name='schoolTo' value={schoolTo} onChange={saveValue} type="date" id="dateToInput"/>
                     <div id={'buttons'}>
-                        <button type="submit">Submit</button>
+                        <button name='educationSubmitBtn' onClick={changeButtonStatus} type="submit">Submit</button>
                     </div>
                 </form>
             </div>

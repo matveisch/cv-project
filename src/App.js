@@ -4,6 +4,7 @@ import General from "./components/General";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import GeneralData from "./components/GeneralData";
+import EducationData from "./components/EducationData";
 
 class App extends Component {
     constructor(props) {
@@ -11,10 +12,21 @@ class App extends Component {
 
         this.state = {
             generalSubmitBtn: false,
+            educationSubmitBtn: false,
+            experienceSubmitBtn: false,
 
+            // keys for General.js
             name: '',
             email: '',
-            phone: ''
+            phone: '',
+
+            // keys for Education.js
+            schoolName: '',
+            studyTitle: '',
+            schoolFrom: '',
+            schoolTo: '',
+
+            // keys for Experience.js
         };
 
         this.saveValue = this.saveValue.bind(this);
@@ -28,18 +40,19 @@ class App extends Component {
         })
     }
 
+    // function for Submit buttons that change components.
     changeButtonStatus(e) {
         e.preventDefault();
         this.setState({
-            generalSubmitBtn: true,
+            [e.target.name]: true,
         })
-        console.log(this.state)
     }
 
+    // function for Edit buttons that turn back component with input fields.
     unSubmitBtn(e) {
         e.preventDefault();
         this.setState({
-            generalSubmitBtn: false,
+            [e.target.name]: false,
         })
     }
 
@@ -60,7 +73,20 @@ class App extends Component {
                         email={this.state.email}
                         phone={this.state.phone}
                         unSubmitBtn={this.unSubmitBtn}/>}
-                    <Education />
+                    {(!this.state.educationSubmitBtn) ?
+                        <Education
+                            saveValue={this.saveValue}
+                            changeButtonStatus={this.changeButtonStatus}
+                            schoolName={this.state.schoolName}
+                            studyTitle={this.state.studyTitle}
+                            schoolFrom={this.state.schoolFrom}
+                            schoolTo={this.state.schoolTo}/> :
+                        <EducationData
+                            schoolName={this.state.schoolName}
+                            studyTitle={this.state.studyTitle}
+                            schoolFrom={this.state.schoolFrom}
+                            schoolTo={this.state.schoolTo}
+                            unSubmitBtn={this.unSubmitBtn}/>}
                     <Experience />
                 </div>
             </div>

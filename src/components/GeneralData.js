@@ -14,7 +14,7 @@ class GeneralData extends Component {
                 <p>Name: {name}</p>
                 <p>Email: {email}</p>
                 <p>Phone: {phone}</p>
-                <button onClick={unSubmitBtn}>Edit</button>
+                <button name='generalSubmitBtn' onClick={unSubmitBtn}>Edit</button>
             </div>
         )
     }
