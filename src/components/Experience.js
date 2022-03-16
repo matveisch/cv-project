@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Form.css'
 
-class Education extends Component {
+class Experience extends Component {
     constructor(props) {
         super(props);
     }
@@ -9,13 +9,16 @@ class Education extends Component {
     render() {
         return (
             <div>
-                <h2>Educational experience</h2>
+                <h2>Practical experience</h2>
                 <form>
-                    <label htmlFor="schoolInput">School name</label>
-                    <input type="text" id="schoolInput"/>
+                    <label htmlFor="companyInput">Company name</label>
+                    <input type="text" id="companyInput"/>
 
-                    <label htmlFor="titleInput">Title of study</label>
-                    <input type="email" id="titleInput"/>
+                    <label htmlFor="positionInput">Position title</label>
+                    <input type="email" id="positionInput"/>
+
+                    <label htmlFor="tasksInput">Main tasks</label>
+                    <input type="text" id="tasksInput"/>
 
                     <label htmlFor="dateFromInput">From</label>
                     <input type="date" id="dateFromInput"/>
@@ -32,4 +35,4 @@ class Education extends Component {
     }
 }
 
-export default Education;
+export default Experience;
