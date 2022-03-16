@@ -1,0 +1,20 @@
+form {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  justify-content: center;
+  gap: 10px;
+}
+form label {
+  grid-column: 1/2;
+}
+form input {
+  grid-column: 2/4;
+}
+form #buttons {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=General.css.map */
