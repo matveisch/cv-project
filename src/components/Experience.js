@@ -7,26 +7,28 @@ class Experience extends Component {
     }
 
     render() {
+        const {companyName, positionTitle, mainTasks, companyFrom, companyTo, saveValue, changeButtonStatus} = this.props;
+
         return (
             <div>
                 <h2>Practical experience</h2>
                 <form>
                     <label htmlFor="companyInput">Company name</label>
-                    <input type="text" id="companyInput"/>
+                    <input name='companyName' value={companyName} onChange={saveValue} type="text" id="companyInput"/>
 
                     <label htmlFor="positionInput">Position title</label>
-                    <input type="email" id="positionInput"/>
+                    <input name='positionTitle' value={positionTitle} onChange={saveValue} type="email" id="positionInput"/>
 
                     <label htmlFor="tasksInput">Main tasks</label>
-                    <input type="text" id="tasksInput"/>
+                    <input name='mainTasks' value={mainTasks} onChange={saveValue} type="text" id="tasksInput"/>
 
                     <label htmlFor="dateFromInput">From</label>
-                    <input type="date" id="dateFromInput"/>
+                    <input name='companyFrom' value={companyFrom} onChange={saveValue} type="date" id="dateFromInput"/>
 
                     <label htmlFor="dateToInput">To</label>
-                    <input type="date" id="dateToInput"/>
+                    <input name='companyTo' value={companyTo} onChange={saveValue} type="date" id="dateToInput"/>
                     <div id={'buttons'}>
-                        <button type="submit">Submit</button>
+                        <button name='experienceSubmitBtn' onClick={changeButtonStatus} type="submit">Submit</button>
                     </div>
                 </form>
             </div>

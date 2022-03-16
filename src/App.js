@@ -5,6 +5,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import GeneralData from "./components/GeneralData";
 import EducationData from "./components/EducationData";
+import ExperienceData from "./components/ExperienceData";
 
 class App extends Component {
     constructor(props) {
@@ -27,6 +28,11 @@ class App extends Component {
             schoolTo: '',
 
             // keys for Experience.js
+            companyName: '',
+            positionTitle: '',
+            mainTasks: '',
+            companyFrom: '',
+            companyTo: '',
         };
 
         this.saveValue = this.saveValue.bind(this);
@@ -87,7 +93,22 @@ class App extends Component {
                             schoolFrom={this.state.schoolFrom}
                             schoolTo={this.state.schoolTo}
                             unSubmitBtn={this.unSubmitBtn}/>}
-                    <Experience />
+                    {(!this.state.experienceSubmitBtn) ?
+                        <Experience
+                            saveValue={this.saveValue}
+                            changeButtonStatus={this.changeButtonStatus}
+                            companyName={this.state.companyName}
+                            positionTitle={this.state.positionTitle}
+                            mainTasks={this.state.mainTasks}
+                            companyFrom={this.state.companyFrom}
+                            companyTo={this.state.companyTo}/> :
+                        <ExperienceData
+                            companyName={this.state.companyName}
+                            positionTitle={this.state.positionTitle}
+                            mainTasks={this.state.mainTasks}
+                            companyFrom={this.state.companyFrom}
+                            companyTo={this.state.companyTo}
+                            unSubmitBtn={this.unSubmitBtn}/>}
                 </div>
             </div>
         )
