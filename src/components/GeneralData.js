@@ -6,7 +6,7 @@ class GeneralData extends Component {
     }
 
     render() {
-        const {name, email, phone} = this.props;
+        const {name, email, phone, unSubmitBtn} = this.props;
 
         return (
             <div>
@@ -14,6 +14,7 @@ class GeneralData extends Component {
                 <p>Name: {name}</p>
                 <p>Email: {email}</p>
                 <p>Phone: {phone}</p>
+                <button onClick={unSubmitBtn}>Edit</button>
             </div>
         )
     }

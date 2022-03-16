@@ -14,13 +14,13 @@ class General extends Component {
                 <h2>General information</h2>
                 <form>
                     <label htmlFor="nameInput">Name</label>
-                    <input name='name' onChange={saveValue} id="nameInput"/>
+                    <input name='name' value={this.props.name} onChange={saveValue} id="nameInput"/>
 
                     <label htmlFor="emailInput">Email</label>
-                    <input name='email' onChange={saveValue} type="email" id="emailInput"/>
+                    <input name='email' value={this.props.email} onChange={saveValue} type="email" id="emailInput"/>
 
                     <label htmlFor="phoneInput">Phone</label>
-                    <input name='phone' onChange={saveValue} type="tel" id="phoneInput"/>
+                    <input name='phone' value={this.props.phone} onChange={saveValue} type="tel" id="phoneInput"/>
                     <div id={'buttons'}>
                         <button onClick={changeButtonStatus} type="submit">Submit</button>
                     </div>

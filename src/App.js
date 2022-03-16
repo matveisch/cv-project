@@ -10,11 +10,8 @@ class App extends Component {
         super(props);
 
         this.state = {
-            buttons: {
-                general: false,
-                education: false,
-                practical: false,
-            },
+            generalSubmitBtn: false,
+
             name: '',
             email: '',
             phone: ''
@@ -22,6 +19,7 @@ class App extends Component {
 
         this.saveValue = this.saveValue.bind(this);
         this.changeButtonStatus = this.changeButtonStatus.bind(this);
+        this.unSubmitBtn = this.unSubmitBtn.bind(this);
     }
 
     saveValue(e) {
@@ -33,11 +31,16 @@ class App extends Component {
     changeButtonStatus(e) {
         e.preventDefault();
         this.setState({
-            buttons: {
-                general: true,
-            }
+            generalSubmitBtn: true,
         })
         console.log(this.state)
+    }
+
+    unSubmitBtn(e) {
+        e.preventDefault();
+        this.setState({
+            generalSubmitBtn: false,
+        })
     }
 
     render() {
@@ -45,14 +48,18 @@ class App extends Component {
             <div id={'app'}>
                 <h1>CV Creator</h1>
                 <div id={'components'}>
-                    {(!this.state.buttons.general) ?
+                    {(!this.state.generalSubmitBtn) ?
                         <General
                         saveValue={this.saveValue}
-                        changeButtonStatus={this.changeButtonStatus}/> :
+                        changeButtonStatus={this.changeButtonStatus}
+                        name={this.state.name}
+                        email={this.state.email}
+                        phone={this.state.phone}/> :
                         <GeneralData
                         name={this.state.name}
                         email={this.state.email}
-                        phone={this.state.phone}/>}
+                        phone={this.state.phone}
+                        unSubmitBtn={this.unSubmitBtn}/>}
                     <Education />
                     <Experience />
                 </div>
